@@ -83,24 +83,24 @@ const Home: React.FC<HomeProps> = ({ setUseTestAadhaar, useTestAadhaar, switchAa
         transition={{ duration: 0.5 }}
       >
         <h1 className="font-bold text-2xl text-gray-800">Welcome to Anon Aadhaar Example</h1>
-        <p className="text-gray-600">Prove your Identity anonymously using your Aadhaar card.</p>
+        <p className="text-black">Prove your Identity anonymously using your Aadhaar card.</p>
 
         <LogInWithAnonAadhaar nullifierSeed={1234} />
 
-        <p className="text-gray-600">
+        <p className="text-black">
           You&apos;re using the <strong>{useTestAadhaar ? "test" : "real"}</strong> Aadhaar mode
         </p>
 
         <button
           onClick={switchAadhaar}
           type="button"
-          className="rounded bg-blue-500 text-white px-4 py-2 mt-2 shadow hover:bg-blue-600 transition"
+          className="rounded bg-blue-500 text-black px-4 py-2 mt-2 shadow hover:bg-blue-600 transition"
         >
           Switch for {useTestAadhaar ? "real" : "test"}
         </button>
       </motion.main>
       <motion.div
-        className="flex flex-col items-center gap-4 rounded-2xl shadow-lg bg-white max-w-screen-sm mx-auto p-8 transition-transform transform hover:scale-105"
+        className="flex flex-col items-center gap-4 rounded-2xl shadow-lg bg-gray-700 max-w-screen-sm mx-auto p-8 transition-transform transform hover:scale-105"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -108,28 +108,9 @@ const Home: React.FC<HomeProps> = ({ setUseTestAadhaar, useTestAadhaar, switchAa
         {anonAadhaar.status === "logged-in" && (
           <>
             <p className="text-green-500">✅ YOUR QR CODE IS VERIFIED!</p>
-            <p className="text-gray-700">Data you are sharing to the current application:</p>
-            <ToggleSwitch
-              label="Age Above 18"
-              isChecked={fields.ageAbove18}
-              onChange={() => toggleField('ageAbove18')}
-            />
-            <ToggleSwitch
-              label="Gender"
-              isChecked={fields.gender}
-              onChange={() => toggleField('gender')}
-            />
-            <ToggleSwitch
-              label="PIN Code"
-              isChecked={fields.pinCode}
-              onChange={() => toggleField('pinCode')}
-            />
-            <ToggleSwitch
-              label="State"
-              isChecked={fields.state}
-              onChange={() => toggleField('state')}
-            />
-            <p className="text-gray-500">No Aadhaar data ever leaves your device!</p>
+            <p className="text-white">Data you are sharing to the current application:</p>
+            
+            <p className="text-black">No Aadhaar data ever leaves your device!</p>
             {latestProof && typeof latestProof === 'object' && (
               <AnonAadhaarProof
                 code={JSON.stringify(latestProof, null, 2)}
