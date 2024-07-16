@@ -71,7 +71,7 @@ const Home: React.FC<HomeProps> = ({ setUseTestAadhaar, useTestAadhaar, switchAa
     <div
       className="min-h-screen flex flex-col items-center justify-center"
       style={{
-        backgroundImage: 'url("/img1.jpg")',
+        backgroundImage: 'url("/img3.jpg")',
         backgroundSize: 'cover',
         backgroundColor: '#f7fafc', // Fallback background color
       }}
